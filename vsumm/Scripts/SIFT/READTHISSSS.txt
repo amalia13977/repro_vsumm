@@ -1,0 +1,18 @@
+I still fkn don't know what happened. GPT said that: 
+SIFT is included in your OpenCV build, but it's disabled because the non-free features (like SIFT, SURF) were not compiled in.
+
+So, i Replace SIFT with ORB (quick and compatible) in
+
+def getSift(img):
+    detector = cv2.ORB_create()
+    kp, des = detector.detectAndCompute(img, None)
+    return des
+
+and also replace the FLANN matcher with a Brute-Force matcher:
+
+bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=False)
+matches = bf.knnMatch(des1, des2, k=2)
+
+after i run it, it gets some trouble with the path folder allFrame, but i think it doesn't make impact on the result. So, i skipped that part.
+
+For 1 videos take amount 6 min to process, so idgaf for all of the videos. enjoy it.

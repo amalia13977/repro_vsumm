@@ -1,0 +1,10 @@
+So the main code is in uniform.sh
+that shit has expected output like:
+
+- Scripts/Uniform_Sampling/uniform.py will generate frame_indices_uniform_15_1.txt.
+- Scripts/Evaluation/evaluate.py will produce final_results_uniform_15.txt with the F-score. 
+
+Urwell
+
+and last, that evaluate.py ass need summe.py from ./Data to run
+the result saved at Result/SumMe/Uniform_Sampling
